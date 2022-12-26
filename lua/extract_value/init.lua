@@ -1,6 +1,6 @@
 local queries = require("nvim-treesitter.query")
 local M = {}
-function extract_value()
+function M.extract_value()
 	-- check vim file type
 	local file_type = vim.bo.filetype
 	if file_type == nil then
@@ -35,6 +35,7 @@ function extract_value()
 		vim.api.nvim_echo({ { "empty var", "WarningMsg" } }, true, {})
 		return
 	end
+
 	cmd = string.format(":lua require'nvim-treesitter.textobjects.select'.select_textobject('@parameter.inner')")
 
 	vim.cmd(cmd)
@@ -61,7 +62,7 @@ end
 
 -- add setup function
 M.setup = function()
-	vim.api.nvim_create_user_command(cmd, extract_value, { silent = true })
+	vim.keymap.set("n", "<Leader>ev", ':lua require("extract_value").extract_value()<CR>')
 end
 
 return M
