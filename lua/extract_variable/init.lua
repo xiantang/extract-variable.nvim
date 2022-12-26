@@ -53,7 +53,7 @@ function M.extract_variable()
 	end
 	vim.fn.setreg("z", newinfo)
 	-- put new content before current line
-	vim.cmd("normal! O <BS>")
+	vim.cmd("normal! O ")
 
 	vim.cmd('normal! "zp')
 end

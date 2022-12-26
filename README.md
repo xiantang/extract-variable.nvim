@@ -4,7 +4,7 @@ A Neovim plugin for extracting values function parameters, this plugin depends o
 
 ## Showcase
 
-![extract-value](https://user-images.githubusercontent.com/34479567/209532406-29b3cf56-5f33-4664-80e2-79e51b05db07.gif)
+![extract-variable](https://user-images.githubusercontent.com/34479567/209532406-29b3cf56-5f33-4664-80e2-79e51b05db07.gif)
 
 ## Installation
 
