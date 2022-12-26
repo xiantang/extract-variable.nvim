@@ -2,8 +2,12 @@
 
 A Neovim plugin for extracting values function parameters, this plugin depends on [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
 
+## Showcase
+
+![extract-value](https://user-images.githubusercontent.com/34479567/209532406-29b3cf56-5f33-4664-80e2-79e51b05db07.gif)
 
 ## Installation
+
 
 ```lua
 use({
@@ -15,6 +19,4 @@ use({
 })
 ```
 
-## Showcase
 
-![extract-variable](https://user-images.githubusercontent.com/34479567/209531891-5bf4038e-6d58-45e5-8e79-f27628f35beb.gif)
