@@ -1,6 +1,6 @@
 local queries = require("nvim-treesitter.query")
 local M = {}
-function M.extract_value()
+function M.extract_variable()
 	-- check vim file type
 	local file_type = vim.bo.filetype
 	if file_type == nil then
@@ -53,16 +53,14 @@ function M.extract_value()
 	end
 	vim.fn.setreg("z", newinfo)
 	-- put new content before current line
-	-- maybe include linebreak
-	-- input abc and backspace 3 times
-	vim.cmd("normal! O ")
+	vim.cmd("normal! O <BS>")
 
 	vim.cmd('normal! "zp')
 end
 
 -- add setup function
 M.setup = function()
-	vim.keymap.set("n", "<Leader>ev", ':lua require("extract_value").extract_value()<CR>')
+	vim.keymap.set("n", "<Leader>ev", ':lua require("extract_variable").extract_variable()<CR>')
 end
 
 return M
