@@ -7,11 +7,11 @@ A Neovim plugin for extracting values function parameters, this plugin depends o
 
 ```lua
 use({
-		"xiantang/extract-value.nvim",
-		config = function()
-			require("extract_value").setup()
-		end,
-		require = { "nvim-treesitter/nvim-treesitter-textobjects" },
+	"xiantang/extract-value.nvim",
+	config = function()
+		require("extract_value").setup()
+	end,
+	require = { "nvim-treesitter/nvim-treesitter-textobjects" },
 })
 ```
 
