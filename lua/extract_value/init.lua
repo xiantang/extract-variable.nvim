@@ -1,4 +1,5 @@
 local queries = require("nvim-treesitter.query")
+local M = {}
 function extract_value(mode)
 	-- check vim file type
 	local file_type = vim.bo.filetype
@@ -59,8 +60,8 @@ function extract_value(mode)
 end
 
 -- add setup function
-function setup()
+M.setup = function()
 	vim.create_command("ExtractValue", "lua require'extract_value'.extract_value()")
 end
 
--- create cmd
+return M
