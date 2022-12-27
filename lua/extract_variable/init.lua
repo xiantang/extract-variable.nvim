@@ -21,7 +21,7 @@ function M.extract_variable()
 		end
 	end
 	if not supported then
-		ret = string.format("file type %s not supported", file_type)
+		local ret = string.format("file type %s not supported", file_type)
 		vim.api.nvim_echo({ { ret, "WarningMsg" } }, true, {})
 		return
 	end
@@ -35,9 +35,9 @@ function M.extract_variable()
 		vim.api.nvim_echo({ { "empty var", "WarningMsg" } }, true, {})
 		return
 	end
-	unnamed = vim.fn.getreg('"')
+	local unnamed = vim.fn.getreg('"')
 
-	cmd = string.format(":lua require'nvim-treesitter.textobjects.select'.select_textobject('@parameter.inner')")
+	local cmd = string.format(":lua require'nvim-treesitter.textobjects.select'.select_textobject('@parameter.inner')")
 
 	vim.cmd(cmd)
 	vim.cmd('normal! "zy')
