@@ -35,6 +35,7 @@ function M.extract_variable()
 		vim.api.nvim_echo({ { "empty var", "WarningMsg" } }, true, {})
 		return
 	end
+	unnamed = vim.fn.getreg('"')
 
 	cmd = string.format(":lua require'nvim-treesitter.textobjects.select'.select_textobject('@parameter.inner')")
 
@@ -54,8 +55,11 @@ function M.extract_variable()
 	vim.fn.setreg("z", newinfo)
 	-- put new content before current line
 	vim.cmd("normal! O ")
+	vim.cmd("normal! x")
 
 	vim.cmd('normal! "zp')
+
+	vim.fn.setreg('"', unnamed)
 end
 
 -- add setup function
